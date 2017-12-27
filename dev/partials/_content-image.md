@@ -1,0 +1,1 @@
+<span class="date">Aug 21</span> _Scotts Valley, CA_ - The kids on their first day of school! No uniforms!

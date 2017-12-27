@@ -1,0 +1,25 @@
+{
+  "name": "tm-christmas-card-2017",
+  "version": "2.0.0",
+  "description": "Christmas card 2017",
+  "author": "Tim Malabuyo",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-changed": "^1.3.2",
+    "gulp-image-resize": "^0.11.0",
+    "gulp-inline-source": "^3.0.0",
+    "gulp-md-template": "^1.1.2",
+    "gulp-minify": "0.0.14",
+    "gulp-prettify": "^0.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1",
+    "zenscroll": "^3.3.0"
+  }
+}

@@ -1,0 +1,93 @@
+@mixin button {
+  cursor: pointer;
+  background: rgba(0, 0, 0, .6);
+  display: block;
+  border-radius: 48px;
+  width: 48px;
+  height: 48px;
+
+  svg {
+    transform: scale(.6);
+    transform-origin: center;
+  }
+}
+
+@mixin animate-out {
+  opacity: 0;
+  transition: opacity .2s ease-out;
+
+  .overlay--shown & {
+    opacity: 1;
+    transition: opacity .5s ease-out .5s; // waits for the overlay open animation
+  }
+}
+
+.overlay {
+  background: rgba(0, 0, 0, .9);
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  transform: scale(.9);
+  transition: opacity .2s linear .2s, transform .2s ease-out .2s, visibility 0s linear .5s;
+}
+
+.overlay--shown {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity .2s linear, transform .2s ease-out;
+}
+
+.overlay__image {
+  margin: 0 auto;
+  max-width: 95vw;
+  width: 100%;
+}
+
+.overlay__caption {
+  @include animate-out;
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6);
+  box-sizing: border-box;
+  color: $color-white;
+  padding: 20px 10px;
+  width: 100%;
+
+  a {
+    color: #fff;
+  }
+}
+
+.overlay__close {
+  @include animate-out;
+  @include button;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.overlay__buttons {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -24px;
+}
+
+.overlay__left-button {
+  @include button;
+  float: left;
+}
+
+.overlay__right-button {
+  @include button;
+  float: right;
+}

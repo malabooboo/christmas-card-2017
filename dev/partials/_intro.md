@@ -1,0 +1,1 @@
+In 2017 we said goodbye to England, our home for 2 and half years, and headed back to California.  We loved living in the UK and made the most of the time we had, but are enjoying being back, close to family, especially during the holidays!  We won't forget the great friends we made, but now have excuses to come back and visit soon.

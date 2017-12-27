@@ -1,0 +1,89 @@
+@mixin desktop {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-hidpi {
+  @media
+  screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 768px) and (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin display-flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  flex-shrink: $int;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  -webkit-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+@mixin align-items($value: stretch) {
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+@mixin justify-content($value: flex-start) {
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin flex-direction($value: row) {
+  -webkit-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-flow($values: (row nowrap)) {
+  -webkit-flex-flow: $values;
+  flex-flow: $values;
+}
+
+@mixin flex-grow($value: 1) {
+  -webkit-flex-grow: $value;
+  flex-grow: $value;
+}
+
+@mixin vertical-align {
+  @include display-flex;
+  @include flex-direction(column);
+  @include justify-content(center);
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($args...) {
+  -webkit-animation: $args;
+  animation: $args;
+}
+
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  transform: $args;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  transition: $args;
+}
