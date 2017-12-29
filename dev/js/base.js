@@ -92,11 +92,11 @@ class Card {
   buildPhotoData_() {
     for (let photoEl of this.photoEls_) {
       let photoUrl = photoEl.dataset.src;
-      let photoUrlLarge = photoUrl.replace(/-800/i, '-1500');
+      // let photoUrl = photoUrl.replace(/-800/i, '-1500');
       let photoCaption =
           photoEl.nextElementSibling.innerHTML.replace(/^\s+|\s+$/g, '');
       this.photoData_.push(
-          {'photoUrl' : photoUrlLarge, 'photoCaption' : photoCaption});
+          {'photoUrl' : photoUrl, 'photoCaption' : photoCaption});
     }
   }
 
@@ -230,9 +230,9 @@ class Card {
     }
 
     let imgZoomSource = imgSource.getAttribute('src');
-    let imgZoomLarge = imgZoomSource.replace(/-800/i, '-1500');
+    // imgZoomSource = imgZoomSource.replace(/-800/i, '-1500');
     let imgZoomCaption = imgSource.nextElementSibling.innerHTML;
-    this.fillOverlayContent_(imgZoomLarge, imgZoomCaption);
+    this.fillOverlayContent_(imgZoomSource, imgZoomCaption);
     this.overlayEl_.classList.add(overlayShown);
   }
 
@@ -243,6 +243,7 @@ class Card {
    * @private
    */
   fillOverlayContent_(photoUrl, photoCaption) {
+    this.overlayImageEl_.setAttribute('src','');
     this.overlayImageEl_.setAttribute('src', photoUrl);
     this.overlayCaptionEl_.innerHTML = photoCaption;
   }
