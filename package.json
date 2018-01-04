@@ -20,6 +20,7 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1",
+    "markdown-templator": "^1.2.2",
     "zenscroll": "^3.3.0"
   }
 }
